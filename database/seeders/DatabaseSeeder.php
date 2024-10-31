@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Noticia;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,10 +22,8 @@ class DatabaseSeeder extends Seeder
         'password' => Hash::make ('123'),
          ]);
 
-       // User::factory()->create([
-      //      'name' => 'Test User',
-      //      'email' => 'test@example.com',
-      //  ]);
+         User::factory(10)->create();
+
 
       Noticia::factory(100)-> create();
     }
